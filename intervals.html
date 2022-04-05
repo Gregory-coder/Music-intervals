@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Intervals</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<div id="input_div">
+		<p id="alert_text"></p>
+		<input type="search" id="search_note" placeholder="Введите ноту" onClick="changeText()"/>
+		<input type="image" id="guitar_button" src="guitar.png" title="Гитарная клавиатура" onClick="guitar()"/>
+		<input type="button" id="input_button" value="Ввести" onClick="intervals()"/>
+		<select id="interval">
+			<option disabled selected>Выберите интервал</option>
+			<option value="1">Малая секунда (0,5)</option>
+    		<option value="2">Большая секунда (1)</option>
+    		<option value="3">Малая терция (1,5)</option>
+    		<option value="4">Большая терция (2)</option>
+    		<option value="5">Чистая кварта (2,5)</option>
+    		<option value="6">Увеличенная кварта/уменьшенная квинта (3)</option>
+    		<option value="7">Чистая квинта (3,5)</option>
+    		<option value="8">Малая секста (4)</option>
+    		<option value="9">Большая секста (4,5)</option>
+    		<option value="10">Малая септима (5)</option>
+    		<option value="11">Большая септима (5,5)</option>
+		</select>
+		<div id="answer">
+		<p id="text"></p>
+		</div>
+	</div>
+	<div id="div_guitar">
+		<image src="guitar_grif_6.png" id="guitar"/>
+		<input type="radio" name="string_6_0" value="E" id="E_4" class="l_0" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="F" id="E_5" class="l_1" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="F#" id="E_6" class="l_2" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="G" id="E_7" class="l_3" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="G#" id="E_8" class="l_4" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="A" id="E_9" class="l_5" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="A#" id="E_10" class="l_6" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="B" id="E_11" class="l_7" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="C" id="E_0" class="l_8" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="C#" id="E_1" class="l_9" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="D" id="E_2" class="l_10" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="D#" id="E_3" class="l_11" onchange="guitar_input(this)">
+		<input type="radio" name="string_6" value="E" id="E_16" class="l_12" onchange="guitar_input(this)">
+
+		<input type="radio" name="string_5_0" value="A" id="a_9" class="l_0" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="A#" id="a_10" class="l_1" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="B" id="a_11" class="l_2" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="C" id="a_0" class="l_3" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="C#" id="a_1" class="l_4" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="D" id="a_2" class="l_5" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="D#" id="a_3" class="l_6" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="E" id="a_4" class="l_7" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="F" id="a_5" class="l_8" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="F#" id="a_6" class="l_9" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="G" id="a_7" class="l_10" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="G#" id="a_8" class="l_11" onchange="guitar_input(this)">
+		<input type="radio" name="string_5" value="A" id="a_21" class="l_12" onchange="guitar_input(this)">
+
+		<input type="radio" name="string_4_0" value="D" id="d_2" class="l_0" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="D#" id="d_3" class="l_1" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="E" id="d_4" class="l_2" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="F" id="d_5" class="l_3" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="F#" id="d_6" class="l_4" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="G" id="d_7" class="l_5" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="G#" id="d_8" class="l_6" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="A" id="d_9" class="l_7" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="A#" id="d_10" class="l_8" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="B" id="d_11" class="l_9" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="C" id="d_0" class="l_10" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="C#" id="d_1" class="l_11" onchange="guitar_input(this)">
+		<input type="radio" name="string_4" value="D" id="d_14" class="l_12" onchange="guitar_input(this)">
+
+		<input type="radio" name="string_3_0" value="G" id="g_7" class="l_0" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="G#" id="g_8" class="l_1" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="A" id="g_9" class="l_2" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="A#" id="g_10" class="l_3" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="B" id="g_11" class="l_4" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="C" id="g_0" class="l_5" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="C#" id="g_1" class="l_6" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="D" id="g_2" class="l_7" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="D#" id="g_3" class="l_8" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="E" id="g_4" class="l_9" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="F" id="g_5" class="l_10" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="F#" id="g_6" class="l_11" onchange="guitar_input(this)">
+		<input type="radio" name="string_3" value="G" id="g_19" class="l_12" onchange="guitar_input(this)">
+
+		<input type="radio" name="string_2_0" value="B" id="b_11" class="l_0" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="C" id="b_0" class="l_1" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="C#" id="b_1" class="l_2"onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="D" id="b_2" class="l_3" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="D#" id="b_3" class="l_4" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="E" id="b_4" class="l_5" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="F" id="b_5" class="l_6" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="F#" id="b_6" class="l_7" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="G" id="b_7" class="l_8" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="G#" id="b_8" class="l_9" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="A" id="b_9" class="l_10" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="A#" id="b_10" class="l_11" onchange="guitar_input(this)">
+		<input type="radio" name="string_2" value="B" id="b_23" class="l_12" onchange="guitar_input(this)">
+
+		<input type="radio" name="string_1_0" value="E" id="e_4" class="l_0" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="F" id="e_5" class="l_1" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="F#" id="e_6" class="l_2" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="G" id="e_7" class="l_3" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="G#" id="e_8" class="l_4" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="A" id="e_9" class="l_5" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="A#" id="e_10" class="l_6" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="B" id="e_11" class="l_7" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="C" id="e_0" class="l_8" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="C#" id="e_1" class="l_9" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="D" id="e_2" class="l_10" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="D#" id="e_3" class="l_11" onchange="guitar_input(this)">
+		<input type="radio" name="string_1" value="E" id="e_16" class="l_12" onchange="guitar_input(this)">
+	</div>
+	<div id="bottom">
+		<a href="https://github.com/Gregory-coder" id="author" class="bottom-text">Автор</a>
+		<a href="https://github.com/Gregory-coder/Music-intervals" id="code" class="bottom-text">Исходный код</a>
+		<div id="whatsthis">
+			<p id="whatstext">Что такое музыкальные интервалы?</p>
+			<input type="image" id="left" src="left.jpg" onClick="showDef()"/>
+			<p id="interval_def">Интервал в музыке — соотношение двух музыкальных звуков по их высоте.</p>
+			<a id="wiki" href="https://ru.wikipedia.org/wiki/%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D0%B0%D0%BB_(%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0)">Википедия</a>
+		</div>
+	</div>
+	<script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
