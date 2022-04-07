@@ -59,7 +59,13 @@ var intervals = function(){
 		}
 		note = (note+12+interval)%12
 		isRadio = false;
-		document.getElementById('text').innerHTML = notes_2[note];
+
+		if (notes_1[note] === "") {
+			var note_text = notes_2[note] + ' (' + notes_1[note-1] + "-" + "диез" + ')';
+		} else {
+			var note_text = notes_2[note] + ' (' + notes_1[note] + ')'
+		}
+		document.getElementById('text').innerHTML = note_text;
 
 		for (let i = 0; i<strings_2.length; i++) {
 			let note_i = strings_2[i]+'_'+note;
@@ -80,7 +86,7 @@ var intervals = function(){
 function guitar_input(e) {
 	document.getElementById('search_note').value = ''
 	if (notes_1[e.id.slice(2)%12] === "") {
-		var note_text = e.value + ' (' + notes_1[e.id.slice(2)%12-1] + " " + "диез" + ')';
+		var note_text = e.value + ' (' + notes_1[e.id.slice(2)%12-1] + "-" + "диез" + ')';
 	} else {
 		var note_text = e.value + ' (' + notes_1[e.id.slice(2)%12] + ')'
 	}

@@ -55,13 +55,13 @@ input[type="search"]::-webkit-search-cancel-button {
 #answer {
 	position: relative;
 	top: 20px;
-	width: 200px;
+	width: 250px;
 	height: 30px;
 }
 #text {
 	font-family: Arial;
 	font-size: 30px;
-	text-align: center;
+	text-align: left;
 }
 #alert_text {
 	font-family: Arial;
@@ -72,8 +72,8 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 #bottom {
 	position: absolute;
-	top: 85%;
 	width: 99%;
+	height: 30px;
 	bottom: 5px;
 }
 .bottom-text {
